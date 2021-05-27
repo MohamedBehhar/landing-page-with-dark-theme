@@ -1,0 +1,346 @@
+/* General rules */
+*{
+    color: var(--White);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+:root{
+    
+/*Primary */
+--intro-email-bg : hsl(217, 28%, 15%); /* intro and email sign up background */
+--main-bg : hsl(218, 28%, 13%); /*main background*/
+--footer-bg : hsl(216, 53%, 9%); /*footer background*/
+--testimonials-bg : hsl(219, 30%, 18%); /*testimonials background*/
+
+/* Accent */
+
+--Cyan-cta: hsl(176, 68%, 64%);
+--Blue-cta: hsl(198, 60%, 50%);
+--Light-Red-error: hsl(0, 100%, 63%);
+
+--White: hsl(0, 0%, 100%);
+
+}
+
+/* Typography */
+h1, h3, h5, a, button{
+    font-family: 'Raleway', sans-serif;   
+    margin-bottom: 1rem; 
+}
+
+p{  
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    opacity: .9;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+/* padding-bottom */
+.padding-bottom{
+    padding-bottom: 5rem;
+}
+
+/* styling the buttons */
+button{
+    background: linear-gradient( to right ,var(--Cyan-cta) ,var(--Blue-cta));
+    padding: .5rem;
+    width: 150px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+
+/* End of general rules */
+
+/* styling the body */
+body{
+    background: var(--main-bg);
+}
+
+/* styling the container */
+.container{
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+/* making the container responsive */
+@media screen and (max-width:1220px){
+    .container{
+        max-width: 1100px;
+    }
+}
+@media screen and (max-width:1120px){
+    .container{
+        max-width: 1000px;
+    }
+}
+@media screen and (max-width:1020px){
+    .container{
+        width: 100%;
+    }
+} 
+
+/* styling the header */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+.logo{
+    max-width: 100px;
+    object-fit: contain;
+}
+.nav {
+    display: flex;
+}
+.nav li a{
+    font-size: 14px;
+    padding-left: 8px;
+    opacity: .8;
+}
+
+
+/* styling the introduction section */
+.intro{
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.intro img{
+    max-width: 100%;
+}
+@media screen and (max-width:750px){
+    .intro{
+        width: 100%;
+    }
+}
+/* styling the features section  */
+.features{
+    margin: 0 auto;
+    max-width: 70%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+.feature{
+    max-width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+@media screen and (max-width: 650px){
+    .features{
+        margin: 0 auto;
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+/* styling the productivity section */
+.productive{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.productive img{
+    max-width: 100%;
+    justify-self: center;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text a{
+    width: max-content;
+    color: var(--Cyan-cta);
+    border-bottom: 1px solid var(--Cyan-cta);
+}
+.text a::after{
+    content: "\279D";
+}
+.text a:hover{
+    color: white;
+    opacity: .9;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+/* styling the reviews section */
+.reviews{
+    display: flex;
+    gap: 2rem;
+}
+
+@media screen and (max-width: 850px){
+    .reviews{
+        margin: 0 auto;
+        max-width: 90%;
+        flex-direction: column;
+    }
+}
+
+.review{
+    background: var(--testimonials-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    position: relative;
+}
+.quotes{
+    position: absolute;
+    background-image: url(/images/bg-quotes.png);
+    top: -20%;
+    left: 5%;
+    z-index: -1;
+}
+.review .profile{
+    display: flex;
+    align-items: center;
+}
+
+.profile img{
+    max-width: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.info {
+    padding-left: 1rem;
+}
+.info p,
+.info h5{
+    margin-bottom: 0;
+}
+
+/* styling the early acces card */
+.contact-card{
+    background: var(--testimonials-bg);
+    position: absolute;
+    max-width: 80%;
+    top: -25%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.418);
+}
+.contact-card input{
+    color: var(--main-bg);
+    border: none;
+    outline: none;
+    min-width:70%;
+    padding: .5rem;
+    margin: .5rem;
+    border-radius: 25px;
+}
+
+footer{
+    position: relative;
+    margin-top: 10rem;
+    padding-top: 14rem;
+    background: var(--footer-bg);
+}
+
+footer .logo{
+    margin-bottom: 2rem;
+}
+
+.footer-info{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    opacity: .9;
+}
+@media screen and (max-width:1000px){
+    .footer-info{
+        flex-direction: column;
+    }
+}
+.contact-info{
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+@media screen and (max-width:600px){
+    .contact-info{
+        flex-direction: column;
+    }
+}
+.contact-info p ,
+.contact-info span{
+    margin-left: .5rem;
+}
+.adress{
+    flex: 2;
+    display: flex;
+}
+.call-email{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.about-contact-social{
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+@media screen and (max-width: 500px){
+    .about-contact-social{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+}
+.contact-us, .about-us{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.social-media{
+    display: flex;
+    gap: 1rem;
+}
+
+.social-media .fab{
+    font-size: 2rem;
+}
+
+/* styling the attribution */
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
